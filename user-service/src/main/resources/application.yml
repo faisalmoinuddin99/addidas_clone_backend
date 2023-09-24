@@ -1,0 +1,31 @@
+server:
+  port: 8081
+
+
+spring:
+  application:
+    name: USER-SERVICE
+  datasource:
+    url: jdbc:mysql://localhost:3306/user_service
+    username: root
+    password: faisalfacebook
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+      dialect: org.hibernate.dialect.MySQL8Dialect
+
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/ # URL of the Eureka Server http://eureka-server-host:port/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    hostname: localhost # Replace with a unique hostname for your application
